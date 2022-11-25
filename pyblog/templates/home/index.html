@@ -1,0 +1,7 @@
+{% extends 'home/base.html' %}
+
+{% block index %}
+    {% for post in object_list %}
+        {{ post.title }}
+    {% endfor %}
+{% endblock index %}
