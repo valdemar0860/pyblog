@@ -1,7 +1,9 @@
 {% extends 'home/base.html' %}
-
-{% block index %}
+{% block content %}
     {% for post in object_list %}
-        {{ post.title }}
+        <div class="post-entry">
+            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
+        </div>
     {% endfor %}
-{% endblock index %}
+{% endblock content %}
