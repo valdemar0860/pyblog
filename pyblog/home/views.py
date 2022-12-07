@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.http import HttpResponse
 
 from .models import Post
@@ -20,6 +20,13 @@ class BlogCreateView(CreateView):
     model = Post
     template_name = 'home/post_new.html'
     fields = '__all__'
+
+
+class BlogUpdateView(UpdateView):
+    model = Post
+    fields = ['title', 'body']
+    template_name = 'home/post_edit.html'
+
 
 # def index(request):
 #     # return HttpResponse("Hello World")
