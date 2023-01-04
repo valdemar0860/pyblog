@@ -3,4 +3,7 @@
 {% block content %}
     <h2> {{ view_blog_detail.title }} </h2>
     <p> {{ view_blog_detail.body }} </p>
+
+    <p><a href="{% url 'post_edit' view_blog_detail.pk %}">Edit Post</a></p>
+    <p><a href="{% url 'post_delete' view_blog_detail.pk %}">Delete Post</a></p>
 {% endblock content %}
